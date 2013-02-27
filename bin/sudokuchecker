@@ -1,0 +1,11 @@
+#!/bin/bash
+# Usage: ./sudokuchecker <filename>
+#  where filename is the csv solution
+
+ROOT="$(cd "$(dirname "$0")" && cd .. && pwd)"
+JVM=java
+MAINCLASS="com.mjf.sudoku.Main"
+
+# I didn't bother to put in META-INF to make an executable JAR, so we use -cp here and 
+# specify the main class (app entry point).
+${JVM} -cp ${ROOT}/dist/SudokuChecker.jar ${MAINCLASS} "$@"
