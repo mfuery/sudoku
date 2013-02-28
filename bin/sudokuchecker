@@ -8,4 +8,4 @@ MAINCLASS="com.mjf.sudoku.Main"
 
 # I didn't bother to put in META-INF to make an executable JAR, so we use -cp here and 
 # specify the main class (app entry point).
-${JVM} -cp ${ROOT}/dist/SudokuChecker.jar ${MAINCLASS} "$@"
+${JVM} -cp ${ROOT}/dist/SudokuSolution.jar ${MAINCLASS} "$@"

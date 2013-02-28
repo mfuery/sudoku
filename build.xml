@@ -1,4 +1,4 @@
-<project name="SudokuChecker" default="dist" basedir=".">
+<project name="SudokuSolution" default="dist" basedir=".">
   <description>
       simple build file
   </description>
@@ -24,7 +24,7 @@
     <mkdir dir="${dist}"/>
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/SudokuChecker.jar" basedir="${build}"/>
+    <jar jarfile="${dist}/SudokuSolution.jar" basedir="${build}"/>
   </target>
 
   <target name="clean" description="clean up" >

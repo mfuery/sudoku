@@ -36,10 +36,10 @@ public class Main {
         }
         
         final String filename = args[0].trim();
+        SudokuSolution checker = null;
 
-        SudokuChecker checker = new SudokuChecker();
         try {
-            checker.parseFile(filename);
+            checker = new SudokuSolution(filename);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);

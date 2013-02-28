@@ -13,27 +13,11 @@ import java.io.IOException;
  * 
  * @author mfuery@gmail.com
  */
-public class SudokuChecker {
+public class SudokuSolution {
     
     private int width = 0;
     private int[][] solution;
     private int[][] transpose;
-
-    public int getWidth() {
-        return width;
-    }
-    
-    /**
-     * Not used (yet)... will accept a matrix already loaded in memory. This demonstrates
-     * that this class is modular and could be dropped into, say, a Sudoku game app.
-     * 
-     * @param matrix And MxM 2D int array of the proposed solution
-     */
-    public void setSolution(int[][] matrix) {
-        width = matrix.length;
-        solution = new int[width][width];
-        makeTranspose(solution);
-    }
 
     /**
      * Parse the csv into an array, do a couple checks that the file is formatted correctly,
@@ -47,7 +31,7 @@ public class SudokuChecker {
      * @param filename csv file
      * @throws IOException
      */
-    public void parseFile(String filename) throws IOException {
+    public SudokuSolution(String filename) throws IOException {
         String line;
         String[] cells;
 
@@ -89,6 +73,23 @@ public class SudokuChecker {
         makeTranspose(solution);
     }
 
+    /**
+     * Not used (yet)... will accept a matrix already loaded in memory. This demonstrates
+     * that this class is modular and could be dropped into, say, a Sudoku game app.
+     * 
+     * @param matrix And MxM 2D int array of the proposed solution
+     */
+    public SudokuSolution(int[][] matrix) {
+        width = matrix.length;
+        solution = new int[width][width];
+        makeTranspose(solution);
+        
+    }
+    
+    public int getWidth() {
+        return width;
+    }
+    
     /**
      * 
      * @return boolean
